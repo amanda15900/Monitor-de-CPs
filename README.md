@@ -79,8 +79,6 @@ Contributions, suggestions, and improvements are welcome.
 ---
 
 📌 *This repository is intended for educational and learning purposes only.*
-
-
 ```
 ````````
 # 🏗️ CPMonitorApp - Monitor de CPs de Concreto
@@ -130,8 +128,8 @@ O objetivo principal é oferecer uma ferramenta simples para acompanhar a entrad
 3. Não há dependências externas além de bibliotecas em **CDN** já incluídas nos arquivos HTML.
    Basta abrir o projeto no navegador.
 
+ `````````
 ---
-
 ## ▶️ Como Rodar
 
 1. Abra o arquivo `index.html` em qualquer navegador moderno.
