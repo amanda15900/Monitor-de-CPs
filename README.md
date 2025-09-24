@@ -43,7 +43,7 @@ The app provides a simple and intuitive way to track concrete lot entries, stren
 3. Open `index.html` in any modern web browser.
 >   No additional dependencies are required as all libraries are loaded via CDN.
 
-
+---
 
 ## ▶️ How to Use
 
@@ -114,20 +114,20 @@ O objetivo principal é oferecer uma ferramenta simples para acompanhar a entrad
 
 1. Clone o repositório:
 
-   ```bash
-   git clone https://github.com/seu-usuario/CPMonitorApp.git
-````
+
+ >  git clone https://github.com/seu-usuario/CPMonitorApp.git
+
 
 2. Entre na pasta do projeto:
 
-   ```bash
-   cd CPMonitorApp
-   ```
 
-3. Não há dependências externas além de bibliotecas em **CDN** já incluídas nos arquivos HTML.
-   Basta abrir o projeto no navegador.
+ > cd CPMonitorApp
 
- `````````
+
+3. Basta abrir o projeto no navegador.
+> Não há dependências externas além de bibliotecas em **CDN** já incluídas nos arquivos HTML.
+
+
 ---
 ## ▶️ Como Rodar
 
