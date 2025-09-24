@@ -78,8 +78,8 @@ Contributions, suggestions, and improvements are welcome.
 ---
 
 📌 *This repository is intended for educational and learning purposes only.*
-```
-````````
+
+---
 # 🏗️ CPMonitorApp - Monitor de CPs de Concreto
 
 Este é um projeto acadêmico desenvolvido em **HTML, CSS e JavaScript** para monitoramento de **CPs (Corpos de Prova) de Concreto**.  
