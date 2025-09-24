@@ -5,8 +5,6 @@ The app provides a simple and intuitive way to track concrete lot entries, stren
 
 > 🚀 Created as a front-end practice project, designed to be easily extended or improved in the future.
 
----
-
 ## 📌 Features
 
 - Manage **companies**, **construction projects**, and **concrete lots**  
