@@ -1,0 +1,97 @@
+/* --- Importa as mesmas variáveis de cor do seu projeto principal --- */
+:root {
+    --bg-color: #f4f7f9;
+    --card-bg-color: #ffffff;
+    --primary-text-color: #2c3e50;
+    --border-color: #e4e9f0;
+    --accent-color: #48c9b0;
+    --accent-color-dark: #3f9e8d;
+    --danger-color: #e74c3c;
+    --card-shadow: 0 4px 15px rgba(44, 62, 80, 0.06);
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+    margin: 0;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ocupa a tela inteira */
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.card {
+    background: var(--card-bg-color);
+    border-radius: 12px;
+    padding: 35px 40px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 1.8em;
+}
+
+h1 .fa-solid {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+input {
+    font-family: 'Inter', sans-serif;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-size: 1em;
+    transition: all 0.2s ease-in-out;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(72, 201, 176, 0.2);
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #fff;
+    font-weight: 600;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--accent-color-dark);
+}
+
+.error-message {
+    color: var(--danger-color);
+    font-weight: 500;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    min-height: 1.2em; /* Reserva espaço para não "pular" a tela */
+}

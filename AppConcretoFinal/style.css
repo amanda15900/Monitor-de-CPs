@@ -1,0 +1,253 @@
+/* --- NOVA PALETA DE CORES CALMA E CONFIGURAÇÕES GLOBAIS --- */
+:root {
+    --bg-color: #f4f7f9; --card-bg-color: #ffffff; --primary-text-color: #2c3e50;
+    --secondary-text-color: #7f8c9a; --border-color: #e4e9f0; --accent-color: #48c9b0;
+    --accent-color-dark: #3f9e8d; --danger-color: #e74c3c; --alert-bg-color: #e8f7ff;
+    --alert-border-color: #bde3ff; --card-shadow: 0 4px 15px rgba(44, 62, 80, 0.06);--success-color: #27ae60;
+}
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+    margin: 0;
+    padding: 20px; 
+    padding-top: 90px; /* IMPORTANTE: Adiciona espaço para o header fixo */
+    line-height: 1.6;
+}
+/* --- ESTILOS DO NOVO CABEÇALHO FIXO --- */
+.app-header {
+    background: var(--card-bg-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001; /* Garante que fique acima de tudo, inclusive do modal */
+    box-shadow: 0 2px 10px rgba(44, 62, 80, 0.08);
+    padding: 0 20px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.5em; /* Ajusta o tamanho da fonte da logo */
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.header-actions button {
+    background: none;
+    border: 1px solid transparent;
+    color: var(--secondary-text-color);
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.header-actions button:hover {
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+}
+
+#clear-all-btn:hover {
+    background-color: #fee2e2;
+    color: var(--danger-color);
+    border-color: #fecaca;
+}
+
+.container { max-width: 1000px; margin: auto; }
+.card {
+    background: var(--card-bg-color); border-radius: 12px; padding: 25px 30px;
+    margin-bottom: 25px; box-shadow: var(--card-shadow); border: 1px solid var(--border-color);
+}
+h1, h2, h3 { color: var(--primary-text-color); font-weight: 600; }
+h1 { text-align: center; margin-bottom: 30px; }
+h2, h3 { margin-top: 0; }
+h2 .fa-solid, h3 .fa-solid { margin-right: 10px; color: var(--secondary-text-color); }
+
+input, select, button {
+    font-family: 'Inter', sans-serif; padding: 12px 15px; border-radius: 8px;
+    border: 1px solid var(--border-color); font-size: 1em; transition: all 0.2s ease-in-out;
+}
+input:focus, select:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 3px rgba(72, 201, 176, 0.2); }
+
+button[type="submit"] {
+    background-color: var(--accent-color); border-color: var(--accent-color);
+    color: #fff; font-weight: 600;
+}
+button[type="submit"]:hover { background-color: var(--accent-color-dark); }
+.form-inline { display: flex; gap: 15px; margin-bottom: 15px; align-items: center; }
+.form-inline > * { flex: 1; }
+.form-grid { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; }
+
+.checkbox-container { margin: 20px 0; }
+.checkbox-container > label { display: block; margin-bottom: 10px; font-weight: 500; color: var(--secondary-text-color); }
+.checkbox-group { display: flex; flex-wrap: wrap; gap: 10px; }
+.checkbox-group input[type="checkbox"] { opacity: 0; position: fixed; width: 0; }
+.checkbox-group label { display: inline-block; background-color: #eaf0f4; padding: 8px 15px; border-radius: 20px; border: 1px solid var(--border-color); cursor: pointer; transition: all 0.2s ease-in-out; }
+.checkbox-group input[type="checkbox"]:checked + label { background-color: var(--primary-text-color); color: #fff; border-color: var(--primary-text-color); font-weight: 500; }
+
+/* --- ESTILOS PARA SEÇÕES RETRÁTEIS (SANFONA/ACCORDION) --- */
+.collapsible-header {
+    cursor: pointer; position: relative; padding-left: 25px; user-select: none;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.collapsible-header::before {
+    content: '\f0da'; /* Ícone de seta do Font Awesome */
+    font-family: "Font Awesome 6 Free"; font-weight: 900;
+    position: absolute; left: 0; top: 50%; transform: translateY(-50%) rotate(0deg);
+    transition: transform 0.3s ease; font-size: 1.1em; color: var(--secondary-text-color);
+}
+.collapsible-header.active::before { transform: translateY(-50%) rotate(90deg); }
+.collapsible-content {
+    display: grid;
+    grid-template-rows: 0fr; /* Começa fechado */
+    transition: grid-template-rows 0.4s ease-in-out;
+}
+.collapsible-content.active {
+    grid-template-rows: 1fr; /* Expande para o tamanho do conteúdo */
+}
+/* Este div interno é necessário para a animação com grid funcionar corretamente */
+.collapsible-content > div {
+    overflow: hidden;
+}
+.obra-card .collapsible-content {
+    border-left: 2px solid var(--border-color);
+    margin-left: 8px;
+    padding-left: 15px;
+}
+.ensaio-pendente {
+    background-color: #fee2e2 !important; /* Vermelho claro para ensaios atrasados */
+}
+
+#alert-list { list-style: none; padding: 0; }
+.alert-item {
+    background-color: var(--alert-bg-color); border-left: 5px solid var(--alert-border-color);
+    padding: 15px; margin-bottom: 10px; display: flex; justify-content: space-between;
+    align-items: center; cursor: pointer; border-radius: 8px;
+}
+.alert-item:hover { background-color: #d8effc; }
+
+.lote-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+.lote-table th, .lote-table td { padding: 12px; border-bottom: 1px solid var(--border-color); text-align: left; vertical-align: middle; }
+.lote-header { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.lote-table tfoot td { text-align: right; padding-top: 15px; border-bottom: none; }
+
+.resultado-verde { color: var(--success-color); font-weight: 600; }
+.resultado-vermelho { color: var(--danger-color); font-weight: 600; }
+
+.icon-btn {
+    background: none; border: none; cursor: pointer; padding: 5px; font-size: 1.1em;
+    line-height: 1; width: 40px; height: 40px; border-radius: 50%;
+    transition: all 0.2s; color: var(--secondary-text-color);
+}
+.icon-btn:hover { background-color: var(--bg-color); }
+.icon-btn.pdf-btn:hover, .icon-btn.report-btn:hover { color: #2980b9; }
+.icon-btn.edit-btn:hover { color: var(--accent-color); }
+.icon-btn.delete-btn:hover, .icon-btn.delete-ensaio-btn:hover { color: var(--danger-color); }
+.actions { display: flex; gap: 5px; align-items: center; }
+
+/* --- ESTILOS DA JANELA MODAL (EDITAR LOTE) --- */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(44, 62, 80, 0.6);
+    display: none; justify-content: center; align-items: center; z-index: 1000;
+}
+.modal-content {
+    background: var(--card-bg-color); padding: 30px; border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 90%; max-width: 500px;
+}
+.modal-actions { display: flex; justify-content: flex-end; gap: 15px; margin-top: 20px; }
+#cancel-edit-btn { background-color: var(--border-color); color: var(--secondary-text-color); }
+/* --- ESTILOS DA LIXEIRA --- */
+.lixeira-content {
+    max-width: 800px; /* Janela maior */
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.lixeira-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 5px;
+}
+
+.lixeira-header h2 {
+    margin: 0;
+}
+
+#close-lixeira-btn {
+    font-size: 2em;
+    font-weight: 300;
+    width: 44px;
+    height: 44px;
+}
+
+.lixeira-info {
+    font-size: 0.9em;
+    color: var(--secondary-text-color);
+    margin-bottom: 20px;
+}
+
+#lixeira-list {
+    overflow-y: auto; /* Permite rolar a lista se houver muitos itens */
+    padding-right: 10px;
+}
+
+.lixeira-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.lixeira-item-info span {
+    display: block;
+}
+
+.lixeira-item-info .item-nome {
+    font-weight: 600;
+}
+
+.lixeira-item-info .item-detalhes {
+    font-size: 0.85em;
+    color: var(--secondary-text-color);
+}
+
+.lixeira-item-actions button {
+    font-size: 0.9em;
+    padding: 8px 12px;
+}
+
+.lixeira-item-actions .restore-btn:hover {
+    background-color: #e8f7ff;
+    color: #007bff;
+}
+
+.lixeira-item-actions .perm-delete-btn:hover {
+    background-color: #fee2e2;
+    color: var(--danger-color);
+}

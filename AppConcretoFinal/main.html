@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de CPs de Concreto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/jspdf-autotable@3.5.23/dist/jspdf.plugin.autotable.js"></script>
+</head>
+<body>
+
+    <header class="app-header">
+    <div class="header-content">
+        <h1 class="logo"><i class="fa-solid fa-helmet-safety"></i> Monitor de CPs</h1>
+        <nav class="header-actions">
+            <button id="clear-all-btn" title="Limpar todos os dados">
+                <i class="fa-solid fa-trash-can"></i> Lixeira
+            </button>
+            <button id="logout-btn" title="Sair do sistema">
+                <i class="fa-solid fa-right-from-bracket"></i> Sair
+            </button>
+        </nav>
+    </div> 
+</header>
+
+    <div class="container">
+    
+        <div class="card" id="alert-center-card">
+            <h2><i class="fa-solid fa-bell"></i> Alertas: Ensaios Pendentes</h2>
+            <ul id="alert-list"></ul>
+        </div>
+
+        <div class="card">
+            <h2><i class="fa-solid fa-tasks"></i> Gerenciamento</h2>
+            <form id="add-empresa-form" class="form-inline">
+                <input type="text" id="nova-empresa-nome" placeholder="Nome da Nova Empresa" required>
+                <button type="submit">Adicionar Empresa</button>
+            </form>
+            <form id="add-obra-form" class="form-inline">
+                <select id="empresa-select-obra" required><option value="">Selecione a Empresa</option></select>
+                <input type="text" id="nova-obra-nome" placeholder="Nome da Nova Obra" required>
+                <button type="submit">Adicionar Obra</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2><i class="fa-solid fa-plus-circle"></i> Registrar Novo Lote de Concreto</h2>
+            <form id="add-lote-form">
+                <div class="form-grid">
+                    <select id="empresa-select-lote" required><option value="">Selecione a Empresa</option></select>
+                    <select id="obra-select-lote" required><option value="">Selecione a Obra</option></select>
+                    <input type="datetime-local" id="data-entrada" title="Data de Entrada do Concreto" required>
+                    <input type="number" id="total-cps" placeholder="Qtd. Total de CPs" min="1" required>
+                    <input type="number" id="fck" placeholder="FCK (MPa)" step="0.1" required>
+                </div>
+                <div class="checkbox-container">
+                    <label>Dias de Ensaio Programados:</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="d1" value="1"><label for="d1">24h</label>
+                        <input type="checkbox" id="d3" value="3"><label for="d3">3d</label>
+                        <input type="checkbox" id="d7" value="7"><label for="d7">7d</label>
+                        <input type="checkbox" id="d14" value="14"><label for="d14">14d</label>
+                        <input type="checkbox" id="d21" value="21"><label for="d21">21d</label>
+                        <input type="checkbox" id="d28" value="28"><label for="d28">28d</label>
+                        <input type="checkbox" id="d63" value="63"><label for="d63">63d</label>
+                    </div>
+                </div>
+                <button type="submit">Registrar Lote</button>
+            </form>
+        </div>
+
+        <main id="main-container"></main>
+    </div>
+
+    <div id="editLoteModal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>Editar Lote</h2>
+            <form id="edit-lote-form">
+                <input type="hidden" id="edit-lote-id">
+                <div class="form-grid">
+                    <div>
+                        <label for="edit-data-entrada">Data de Entrada</label>
+                        <input type="datetime-local" id="edit-data-entrada" required>
+                    </div>
+                    <div>
+                        <label for="edit-total-cps">Qtd. Total de CPs</label>
+                        <input type="number" id="edit-total-cps" min="1" required>
+                    </div>
+                    <div>
+                        <label for="edit-fck">FCK (MPa)</label>
+                        <input type="number" id="edit-fck" step="0.1" required>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" id="cancel-edit-btn">Cancelar</button>
+                    <button type="submit">Salvar Alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+   <div id="lixeiraModal" class="modal-overlay">
+        <div class="modal-content lixeira-content">
+            <div class="lixeira-header">
+                <h2><i class="fa-solid fa-trash"></i> Lixeira</h2>
+                <button id="close-lixeira-btn" class="icon-btn" title="Fechar Lixeira">&times;</button>
+            </div>
+            <p class="lixeira-info">Itens excluídos são mantidos por 15 dias antes da exclusão permanente.</p>
+            <div id="lixeira-list">
+                </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
