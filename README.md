@@ -1,31 +1,30 @@
+# 🏗️ CPMonitorApp – Concrete Test Specimen Tracker
 
-# 🏗️ CPMonitorApp - Concrete Test Specimens Monitor
+CPMonitorApp is an academic project built with **HTML, CSS, and JavaScript** to monitor **Concrete Test Specimens (CPs)**.  
+The app provides a simple and intuitive way to track concrete lot entries, strength tests, and generate PDF reports.
 
-This is an academic project developed in **HTML, CSS, and JavaScript** for monitoring **Concrete Test Specimens (CPs)**.  
-The main goal is to provide a simple tool to track lot entries, strength tests, and generate PDF reports.  
-
-> 🚀 Project created as a front-end programming practice, which can be updated or expanded in the future.
+> 🚀 Created as a front-end practice project, designed to be easily extended or improved in the future.
 
 ---
 
 ## 📌 Features
 
-- Registration of **companies**, **projects (works)**, and **concrete lots**  
-- Tracking of tests at **1, 3, 7, 14, 21, 28, and 63 days**  
+- Manage **companies**, **construction projects**, and **concrete lots**  
+- Track test results at **1, 3, 7, 14, 21, 28, and 63 days**  
 - Alerts for pending tests  
-- Generation of individual reports (per lot) or complete reports (per project) in **PDF**  
-- **Trash system** with items that expire in 15 days  
-- Simple authentication control using `sessionStorage`  
+- Generate **PDF reports** for individual lots or entire projects  
+- **Trash system** with automatic deletion after 15 days  
+- Simple authentication using `sessionStorage`  
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ Technologies
 
 - **HTML5**  
 - **CSS3**  
 - **JavaScript (ES6+)**  
-- [Font Awesome](https://fontawesome.com/) (icons)  
-- [jsPDF](https://github.com/parallax/jsPDF) (PDF report generation)  
+- [Font Awesome](https://fontawesome.com/) for icons  
+- [jsPDF](https://github.com/parallax/jsPDF) for PDF report generation  
 
 ---
 
@@ -37,56 +36,52 @@ The main goal is to provide a simple tool to track lot entries, strength tests, 
    git clone https://github.com/your-username/CPMonitorApp.git
 ````
 
-2. Enter the project folder:
+2. Navigate to the project folder:
 
    ```bash
    cd CPMonitorApp
    ```
 
-3. There are no external dependencies besides libraries in **CDN** already included in the HTML files.
-   Just open the project in the browser.
-
----
-``````
-## ▶️ How to Run
-
-1. Open the `index.html` file in any modern browser.
-2. Log in (simple authentication system via `sessionStorage`).
-3. Start registering companies, projects, and concrete lots.
+3. Open `index.html` in any modern web browser.
+   No additional dependencies are required as all libraries are loaded via CDN.
 
 ---
 
-## 💻 Example of Use
+## ▶️ How to Use
+
+1. Open the app in your browser.
+2. Log in with the simple authentication system.
+3. Start adding companies, projects, and concrete lots.
+
+**Example Workflow:**
 
 * Register a company called **XYZ Constructions**
 * Add a project called **Alpha Building**
-* Insert a lot of CPs with entry date and project FCK( resistance)
-* Add the test results as the days go by (e.g., 7 days, 28 days, etc.)
-* Generate **PDF** reports for documentation
+* Insert a concrete lot with the entry date and target FCK
+* Record test results on the respective days (e.g., 7, 28, 63 days)
+* Generate **PDF reports** for documentation
 
 ---
 
-## 🔮 Next Steps
+## 🔮 Future Improvements
 
-* Improve the interface with **CSS frameworks** (e.g., Bootstrap or Tailwind)
+* Enhance the interface with **CSS frameworks** like Bootstrap or Tailwind
 * Implement a real backend (e.g., Node.js + database)
-* Create a dashboard with performance charts of the lots
-* Add support for exporting reports in **Excel** besides PDF
+* Create a dashboard with charts to visualize lot performance
+* Add export functionality for **Excel reports** in addition to PDF
 
 ---
 
 ## 👨‍🎓 Author
 
-Project developed as front-end programming practice.
-Open to improvements, suggestions, and contributions.
+This project was developed as a front-end programming practice.
+Contributions, suggestions, and improvements are welcome.
 
 ---
 
-📌 *This repository is for academic and learning purposes only.*
+📌 *This repository is intended for educational and learning purposes only.*
 
-``````
 
-Do you also want me to **make it sound more “native” in English** (like a GitHub student project in the US/UK style), or should I keep it as a **direct translation** like above?
 ```
 ````````
 # 🏗️ CPMonitorApp - Monitor de CPs de Concreto
