@@ -1,4 +1,4 @@
-# 🏗️ CPMonitorApp – Concrete Test Specimen's Monitor
+# 🏗️ CPMonitorApp – Concrete Test Specimen Monitor
 
 CPMonitorApp is an academic project built with **HTML, CSS, and JavaScript** to monitor **Concrete Test Specimens (CPs)**.  
 The app provides a simple and intuitive way to track concrete lot entries, strength tests, and generate PDF reports.
