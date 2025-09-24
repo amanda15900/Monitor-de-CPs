@@ -32,16 +32,16 @@ The app provides a simple and intuitive way to track concrete lot entries, stren
 1. Clone the repository:
 
 
-   git clone https://github.com/your-username/CPMonitorApp.git
+  > git clone https://github.com/your-username/CPMonitorApp.git
    
 3. Navigate to the project folder:
 
 
-   cd CPMonitorApp
+  > cd CPMonitorApp
    
 
 3. Open `index.html` in any modern web browser.
-   No additional dependencies are required as all libraries are loaded via CDN.
+>   No additional dependencies are required as all libraries are loaded via CDN.
 
 ---
 
